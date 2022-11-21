@@ -59,20 +59,20 @@ namespace Bankir.View
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if(txtUser.Text.Length > 0)
-            {
-                if (txtPassword.Password.Length > 0)
-                {
-                    DataTable user = Select("SELECT * FROM [dbo].[Login] WHERE [User] = '" + txtUser.Text + "' AND [Pass] = '" + txtPassword.Password + "'");
-                    if (user.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Молодец");
-                    }
-                    else MessageBox.Show("Неправильный логин или пароль");
-                }
-                else MessageBox.Show("Отсуствует пароль");
-            }
-            else MessageBox.Show("Отсуствет логин");
+            //if(txtUser.Text.Length > 0)
+            //{
+            //    if (txtPassword.Password.Length > 0)
+            //    {
+            //        DataTable user = Select("SELECT * FROM [dbo].[Login] WHERE [User] = '" + txtUser.Text + "' AND [Pass] = '" + txtPassword.Password + "'");
+            //        if (user.Rows.Count > 0)
+            //        {
+            //            MessageBox.Show("Молодец");
+            //        }
+            //        else MessageBox.Show("Неправильный логин или пароль");
+            //    }
+            //    else MessageBox.Show("Отсуствует пароль");
+            //}
+            //else MessageBox.Show("Отсуствет логин");
         }
     }
 }
