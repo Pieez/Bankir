@@ -11,7 +11,7 @@ namespace Bankir.ViewModels
     public class LoginViewModel : ViewModelsBase
     {
         //Field
-        private string _username;
+        private string _username = "Username";
         private SecureString _password;
         private string _errorMessage;
         private bool _isViewVisible = true;
@@ -92,7 +92,7 @@ namespace Bankir.ViewModels
 
         private void ExecuteLoginCommand(object obj)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void ExecuteRecoverPassCommand(string username,string email)
