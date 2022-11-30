@@ -12,7 +12,7 @@ namespace Bankir.Repositories
         private readonly string _connectionString;
         public RepositoryBase()
         {
-            _connectionString = "Server=ngknn.ru; Database=43p_Bank_Smolin; Integrated secury=true";
+            _connectionString = "server=ngknn.ru;Trusted_Connection=No;DataBase=43p_Bank_Smolin;User=33П;PWD=12357";
         }
         protected SqlConnection GetConnection()
         {

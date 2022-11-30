@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Bankir.Repositories
 {
     public class UserRepository : RepositoryBase, IUserRepository
@@ -28,7 +29,7 @@ namespace Bankir.Repositories
                 command.CommandText = "select * from [User] where username=@username and [password]=@password";
                 command.Parameters.Add("@username", SqlDbType.NVarChar).Value=credential.UserName;
                 command.Parameters.Add("@password", SqlDbType.NVarChar).Value = credential.Password;
-                validUser = command.ExecuteScalar() = null?false:true ;
+                validUser = command.ExecuteScalar() != null ;
             }
             return validUser;
         }
@@ -48,9 +49,36 @@ namespace Bankir.Repositories
             throw new NotImplementedException();
         }
 
-        public UserModel GetByUsername(string Username)
+        public UserModel GetByUsername(string username)
         {
-            throw new NotImplementedException();
+            UserModel user= null;
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "select * from [User] where username=@username ";
+                command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        user = new UserModel()
+                        {
+                            Id = reader[0].ToString(),
+                            Username = reader[1].ToString(),
+                            Password = string.Empty,
+                            Name = reader[2].ToString(),
+                            LastName = reader[4].ToString(),
+                            Email = reader[5].ToString(),
+
+                        };
+                    }
+                }
+                
+                
+            }
+            return user;
         }
 
         public void Remove(int id)
