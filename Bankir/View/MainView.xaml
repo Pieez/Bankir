@@ -6,16 +6,25 @@
         xmlns:local="clr-namespace:Bankir.View"
         xmlns:viewModel="clr-namespace:Bankir.ViewModels"
         mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+
+        WindowStartupLocation="CenterScreen"
         Title="MainView" Height="450" Width="800">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    
-    <Grid>
+
+
+    <Border>
         <TextBlock Text="{Binding CurrentUserAccount.DisplayName}"
-                   FontSize="30"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-    </Grid>
+                   FontSize="14"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"/>
+    </Border>
+    
+    
+        
+    
 </Window>

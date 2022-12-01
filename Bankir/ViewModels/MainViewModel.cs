@@ -43,14 +43,14 @@ namespace Bankir.ViewModels
                 CurrentUserAccount = new UserAccountModel()
                 {
                     Username = user.Username,
-                    DisplayName = $"Welcome {user.Name} {user.LastName};)",
+                    DisplayName = $"{user.Name} {user.LastName};)",
                     ProfilePicture = null
                 };
             }
             else
             {
-                MessageBox.Show("Invalid user, not logged in");
-                Application.Current.Shutdown();
+                
+                
             }
         }
     }

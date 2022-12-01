@@ -109,7 +109,7 @@ namespace Bankir.ViewModels
             }
             else
             {
-                ErrorMessage = "* Invalid username or password";
+                ErrorMessage = "* Неправильное имя пользователя или пароль";
             }
         }
 
