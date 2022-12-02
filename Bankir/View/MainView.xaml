@@ -7,8 +7,8 @@
         xmlns:viewModel="clr-namespace:Bankir.ViewModels"
         mc:Ignorable="d"
         WindowStyle="None"
-        ResizeMode="NoResize"
-
+        Background="Transparent"
+        AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Title="MainView" Height="450" Width="800">
 
@@ -16,15 +16,79 @@
         <viewModel:MainViewModel/>
     </Window.DataContext>
 
+    <Border CornerRadius="10"
+            BorderThickness="1">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#9EA9DB" Offset="0"></GradientStop>
+                <GradientStop Color="#0C74C0" Offset="0.75"></GradientStop>
+                <GradientStop Color="#53D0E7" Offset="1"></GradientStop>
+                <GradientStop Color="#B1A6B5" Offset="1.75"></GradientStop>
+                <GradientStop Color="#669BEF" Offset="2"></GradientStop>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
-    <Border>
-        <TextBlock Text="{Binding CurrentUserAccount.DisplayName}"
-                   FontSize="14"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top"/>
-    </Border>
-    
-    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--Navigation Menu-->
+                <ColumnDefinition Width="250"/>
+                <!--Content section-->
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Navigation Menu-->
+            <Border CornerRadius="10,0,0,10"
+                    Grid.Column="0">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1.07">
+                        <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
+                        <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <StackPanel>
+                    
+                    <!--Logo-->
+                    <StackPanel Orientation="Horizontal"
+                                Height="35"
+                                Margin="15,25,0,40">
+
+                        <Image Source="/Images/Bank-logos.jpeg" Height="30"/>
+                        <TextBlock Text="Bank Smolin"
+                                   Foreground="{StaticResource tittleColor2}"
+                                   FontSize="20"
+                                   FontFamily="Montserrat"
+                                   FontWeight="Medium"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,0,0"/>
+
+                    </StackPanel>
+                    
+                   <!--Menu Buttons--> 
+                    
+                    
+                </StackPanel>
+                
+            </Border>
+            
+            <!--Main Section-->
+            <Border CornerRadius="0,10,10,0"
+                    Grid.Column="1">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                        <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                        <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+            </Border>
+
+        </Grid>
         
-    
+    </Border>
+
+
+
 </Window>

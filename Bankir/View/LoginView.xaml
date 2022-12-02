@@ -46,8 +46,8 @@
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#FF3C63DA" Offset="0"></GradientStop>
-                    <GradientStop Color="#FF0CC3E6" Offset="0.75"></GradientStop>
+                    <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"></GradientStop>
+                    <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0.75"></GradientStop>
                 </LinearGradientBrush>
             </Border.Background>
 
